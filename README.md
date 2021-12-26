@@ -1,90 +1,40 @@
-# Collapse OS
+Kalinet 
 
-*Bootstrap post-collapse technology*
+- https://kalinet.site (network in progress)
+- https://simpleledger.info/token/b3783144acfb95c5b8458fcafae62dcfd38148bc606bf10e708e848ec3c62e23
+- https://schierlm.github.io/CollapseOS-Web-Emulator/
 
-Collapse OS is a Forth operating system and a collection of tools and
-documentation with a single purpose: preserve the ability to program micro-
-controllers through civilizational collapse.
+zdOS lab's was born from the passion of getting by and the blockchain ecosystem.
+The main purpose of zdOS is to be able to create the first "operating system-dapp" by merging Kalinet OS and D$N token. 
+the idea of ​​this structure is to bring people to an educational purpose and a free computer system. zdOS has one and only founder and one employee and this will make creation a little faster. I ask you interested to contact me and zdOS and predisposed to the collaboration of all of you
 
-It it designed to:
+Kalinet OS is a z80 kernel and a collection of programs, tools and documentation that allows you to assemble an OS that, when completed, will be able to:
 
-1. Run on minimal and improvised machines.
-2. Interface through improvised means (serial, keyboard, display).
-3. Edit text files.
-4. Compile assembler source files for a wide range of MCUs and CPUs.
-5. Read and write from a wide range of storage devices.
-6. Assemble itself and deploy to another machine.
+Run on minimal and improvised machines.
+Interface through improvised means (serial, keyboard, display).
+Edit text files.
+Compile assembler source files for a wide range of MCUs and CPUs.
+Read and write from a wide range of storage devices.
+Replicate itself.
+Additionally, the goal of this project is to be as self-contained as possible. With a copy of this project, a capable and creative person should be able to manage to build and install Collapse OS without external resources (i.e. internet) on a machine of her design, built from scavenged parts with low-tech tools.
 
-Additionally, the goal of this project is to be as self-contained as possible.
-With a copy of this project, a capable and creative person should be able to
-manage to build and install Collapse OS without external resources (i.e.
-internet) on a machine of her design, built from scavenged parts with low-tech
-tools.
+Organisation of this repository
 
-## Git repository no longer updated
+- kernel: Pieces of code to be assembled by the user into a kernel.
+- apps: Pieces of code to be assembled into "userspace" application.
+- recipes: collection of recipes that assemble parts together on a specific machine.
+- doc: User guide for when you've successfully installed Collapse OS.
+-tools: Tools for working with Kalinet OS from "modern" environments. Mostly development tools, but also contains emulated zasm, which is necessary to build Kalinet OS from a non-Kalinet OS machine.
+Each folder has a README with more details.
 
-In the wake of my rejection of modern software and complexity, I've stopped
-using git to manage versioning in Collapse OS because I consider RCS to be
-sufficient. The commit adding this message is therefore the last I'm adding.
+Status
+The project unfinished but is progressing well! See [kalinet.site OS' website][web] for more information.
 
-Further improvements of Collapse OS are available on [Collapse OS' website][web]
-as tarballs of the project including RCS metadata. Those tarballs are updated
-regularly.
+work in progress! .
 
-## Getting started
+zdOS lab's: madkali org.
 
-Documentation is in text files in `doc/`. Begin with `intro.txt`.
+VAT number: 11040550961
 
-Collapse OS can run on any POSIX platform and builds easily.
-See `/cvm/README.md` for instructions.
-
-Alternatively, there's also [Michael Schierl's JS Collapse OS emulator][jsemul]
-which is awesome and allows you to run Collapse OS from your browser, but it
-isn't always up to date. The "Javascript Forth" version is especially awesome:
-it's not a z80 emulator, but a *javascript port of Collapse OS*!
-
-## Organisation of this repository
-
-* `blk.fs`: Collapse OS filesystem's content. See below.
-* `cvm`: A C implementation of Collapse OS, allowing it to run natively on any
-         POSIX platform.
-* `doc`: Documentation.
-* `arch`: collection of makefiles that assemble Collapse OS on different
-          machines.
-* `tools`: Tools for working with Collapse OS from "modern" environments. For
-           example, tools for facilitating data upload to a Collapse OS machine
-           through a serial port.
-* `emul`: Tools for running Collapse OS in an emulated environment.
-* `tests`: Automated test suite for the whole project.
-
-## blk.fs
-
-This file is a big text file containing the "real deal", that is, the contents
-of Collapse OS' filesystem. That filesystem contains everything that a
-post-collapse computer would manage, that is, all Forth and assembler source
-code for the tools it needs to fulfill its goals.
-
-The Collapse OS filesystem is a simple sequence of 1024 bytes blocks. That is
-not very workable in the text editor of a modern system. `blk.fs` represents an
-"unpacked" view of that block system. Each block (16 lines max per block, 64
-chars max per line) begins with a marker indicating the block number of the
-contents that follow.
-
-Blocks must be in ascending order.
-
-That file can be "packed" to a real blkfs with `/tools/blkpack`. A real blkfs
-can be "unpacked" to its text file form with `/tools/blkunpack`.
-
-## Status
-
-The project unfinished but is progressing well! See [Collapse OS' website][web]
-for more information.
-
-## Looking for the assembler version?
-
-The Forth-based Collapse OS is the second incarnation of the concept. The first
-one was entirely written in z80 assembly. If you're interested in that
-incarnation, checkout the `z80asm` branch.
-
-[web]: http://collapseos.org
+to support my project: paypal.me/madkali
 [jsemul]: https://schierlm.github.io/CollapseOS-Web-Emulator/
