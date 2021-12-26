@@ -1,46 +1,25 @@
-# C VM
+C VM
+This is a C implementation of kalinet OS' native words. It allows kalinet OS to run natively on any POSIX environment.
 
-This is a C implementation of Collapse OS' native words. It allows Collapse OS
-to run natively on any POSIX environment.
+Requirements
+You need curses to build the forth executable.
 
-## Requirements
+Build
+Running make will yield forth and stage executables.
 
-You need `curses` to build the `forth` executable.
+Usage
+To play around kalinet OS, you'll want to run ./forth. Refer to doc/intro.txt for help.
 
-## Build
+The program is a curses interface with a limited, fixed size so that it can provide a AT-XY interface. If you wish to change the size of that screen, you need to modify COLS and LINES in both forth.c and forth.fs.
 
-Running `make` will yield `forth` and `stage` executables.
+You can get a REPL by launching the program with rlwrap(1) like this:
 
-## Usage
+rlwrap -e '' -m -S '> ' ./forth /dev/stdin
+Problems?
+If the forth executable works badly (hangs, spew garbage, etc.), it's probably because you've broken your bootstrap binary. It's easy to mistakenly break. To verify if you've done that, look at your git status. If stage.bin is modified, try resetting it and then run make clean all. Things should go better afterwards.
 
-To play around Collapse OS, you'll want to run `./forth`. Refer to
-`doc/intro.txt` for help.
+A modified blkfs can also break things (although even with a completely broken blkfs, you should still get to prompt), you might want to run make pack to ensure that the blkfs file is in sync with the contents of the blk/ folder.
 
-The program is a curses interface with a limited, fixed size so that it can
-provide a AT-XY interface. If you wish to change the size of that screen, you
-need to modify COLS and LINES in both `forth.c` and `forth.fs`.
+If that doesn't work, there's also the nuclear option of git reset --hard and git clean -fxd.
 
-You can get a REPL by launching the program with [`rlwrap(1)`][rlwrap] like
-this:
-
-    rlwrap -e '' -m -S '> ' ./forth /dev/stdin
-
-## Problems?
-
-If the `forth` executable works badly (hangs, spew garbage, etc.),
-it's probably because you've broken your bootstrap binary. It's easy to
-mistakenly break. To verify if you've done that, look at your git status. If
-`stage.bin` is modified, try resetting it and then run `make clean all`. Things
-should go better afterwards.
-
-A modified `blkfs` can also break things (although even with a completely broken
-blkfs, you should still get to prompt), you might want to run `make pack` to
-ensure that the `blkfs` file is in sync with the contents of the `blk/` folder.
-
-If that doesn't work, there's also the nuclear option of `git reset --hard`
-and `git clean -fxd`.
-
-If that still doesn't work, it might be because the current commit you're on
-is broken, but that is rather rare.
-
-[rlwrap]: https://linux.die.net/man/1/rlwrap
+If that still doesn't work, it might be because the current commit you're on is broken, but that is rather rare.
