@@ -1,4 +1,4 @@
-# Testing Collapse OS
+# Testing Kalinet OS
 
-This folder contains Collapse OS' automated testing suite. You can run all tests
+This folder contains Kalinet OS' automated testing suite. You can run all tests
 with `make`.
