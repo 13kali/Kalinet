@@ -1,5 +1,6 @@
 Kalinet 
 
+- https://discord.gg/EMPCAheq
 - https://kalinet.site (network in progress)
 - https://simpleledger.info/token/b3783144acfb95c5b8458fcafae62dcfd38148bc606bf10e708e848ec3c62e23
 - https://schierlm.github.io/CollapseOS-Web-Emulator/
