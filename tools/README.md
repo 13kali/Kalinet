@@ -1,6 +1,6 @@
 # Tools
 
-This folder contains tools to communicate to Collapse OS machines from a modern
+This folder contains tools to communicate to kalinet OS machines from a modern
 environment or to manipulate a blkfs. 
 
 Communication tools all take a device path as a first argument. That device is
@@ -30,3 +30,5 @@ On Linux, it's generally easier:
 * Run screen on the device (often `/dev/ttyUSBX`)
 * Quit with `CTRL+A :quit`
 * Run the tool on the same device
+
+
